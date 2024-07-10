@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-light" style="background-color: rgb(195, 65, 108);">
+    <h1>CourseManagement</h1>
+    <button type="button"  id="add" class=" btn btn-primary" (click)="addCourse()">Add+</button>
+  </nav>
+</div>
+
+<div class="container">
+
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Decription</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allCourses">
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.price}}</td>
+
+      <button type="button"  class=" btn btn-success" routerLink="edit/{{item.id}}">Edit</button>
+      <button type="button"  class=" btn btn-danger ms-2" (click)="deleteData(item.id)">Delete</button>
+
+    </tr>
+  </tbody>
+  </table>
+
+</div>
+
+
+
+
